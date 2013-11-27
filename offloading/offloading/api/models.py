@@ -14,6 +14,8 @@ class Station(models.Model):
     station_together_1 = models.CharField(max_length=3, blank=True, null=True)
     station_together_2 = models.CharField(max_length=3, blank=True, null=True)
 
+    def __unicode__(self):
+        return self.name
 
 class Confirmation(models.Model):
     tweet_text = models.CharField(max_length=256)
@@ -27,6 +29,9 @@ class Incident(models.Model):
     time_confirmed = models.BigIntegerField(blank=True, null=True)
     confirmed = models.BooleanField(default=False)
     confirmation = models.ForeignKey(Confirmation, blank=True, null=True)
+    
+    def __unicode__(self):
+        return self.station.name + " at " + time_initially_reported
 
 
 class Tweet(models.Model):
