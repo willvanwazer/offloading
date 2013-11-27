@@ -1,0 +1,78 @@
+{
+    "objects": [
+        {
+            "station": {
+                "code": "G03",
+                "name": "Addison Road",
+                "lon": -76.89410791,
+                "line_code_4": null,
+                "line_code_2": null,
+                "line_code_3": null,
+                "line_code_1": "BL",
+                "station_together_2": null,
+                "lat": 38.8867478168,
+                "station_together_1": null
+            },
+            "time_initially_reported": 1385511200,
+            "time_confirmed": 1385511200,
+            "reporting_tweets": [
+                {
+                    "tweet_text": "Hey Connor, here's your tweet!",
+                    "username": "willvanwazer",
+                    "user_full_name": "Will Van Wazer",
+                    "time": 1385511200,
+                    "status_id": "405489829372116995"
+                },
+                {
+                    "tweet_text": "Hey Connor, here's your tweet!",
+                    "username": "willvanwazer",
+                    "user_full_name": "Will Van Wazer",
+                    "time": 1385511200,
+                    "status_id": "405489829372116995"
+                }
+            ],
+            "confirmed": true,
+            "confirmation": {
+                "tweet_text": "Hey Connor, here's your tweet!",
+                "username": "willvanwazer",
+                "user_full_name": "Will Van Wazer",
+                "time": 1385511200,
+                "status_id": "405489829372116995"
+            }
+        },
+        {
+            "station": {
+                "code": "G03",
+                "name": "Addison Road",
+                "lon": -76.89410791,
+                "line_code_4": null,
+                "line_code_2": null,
+                "line_code_3": null,
+                "line_code_1": "BL",
+                "station_together_2": null,
+                "lat": 38.8867478168,
+                "station_together_1": null
+            },
+            "time_initially_reported": 1385511200,
+            "time_confirmed": 1385511200,
+            "reporting_tweets": [
+                {
+                    "tweet_text": "Hey Connor, here's your tweet!",
+                    "username": "willvanwazer",
+                    "user_full_name": "Will Van Wazer",
+                    "time": 1385511200,
+                    "status_id": "405489829372116995"
+                },
+                {
+                    "tweet_text": "Hey Connor, here's your tweet!",
+                    "username": "willvanwazer",
+                    "user_full_name": "Will Van Wazer",
+                    "time": 1385511200,
+                    "status_id": "405489829372116995"
+                }
+            ],
+            "confirmed": false,
+            "confirmation": null
+        }
+    ]
+}
