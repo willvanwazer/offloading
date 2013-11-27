@@ -8,9 +8,6 @@ incident_resource = IncidentResource()
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'offloading.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
     url(r'^api/', include(incident_resource.urls)),
     url(r'^admin/', include(admin.site.urls)),
 )
