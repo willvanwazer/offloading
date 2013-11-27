@@ -11,7 +11,8 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         r = requests.get("https://raw.github.com/willvanwazer/metro-status-board/master/stations.json")
         for station_json in r.json():
-            station, created = Station.objects.get_or_create(code=station_json['Code'])
+            station = Station()
+            station.code = station_json['Code']
             station.name = station_json['Name']
             station.lon = station_json['Lon']
             station.lat = station_json['Lat']
