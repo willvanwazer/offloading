@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="metroApp">
+  <head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="metro.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular-resource.min.js"></script>
+    <script src="metro.js"></script>
+  </head>
+  <body ng-controller="OffloadListCtrl">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Metro Offloading</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container wrapper">
+      <div class="row">
+      <div class="col-md-12 header">
+          <h2>Metro Offloading</h2>
+          Search: <input ng-model="searchText" />
+            <label for="all">All</label> <input type="radio" checked="checked" name="type" id="all" ng-click="update('all')" />
+            <label for="confirmed">Confirmed</label><input name="type" type="radio" id="confirmed" ng-click="update('confirmed')" />
+            <label for="unconfirmed">Uncofirmed</label><input name="type" type="radio" id="unconfirmed" ng-click="update('uncofirmed')" />
+
+          <table id="stations">
+            <tr>
+              <th>Station Name</th>
+              <th>Confirmed</th>
+              <th>Time Reported</th>
+              <th>Time Confirmed</th>
+              <th>Line</th>
+            </tr>
+            <tr ng-repeat="offload in offloads | filter:searchText | orderBy:station.name">
+              <td>{{offload.station.name}}</td>
+              <td><p ng-class="{green: offload.confirmed, red: !offload.confirmed }">{{offload.confirmed}}</p></td>
+              <td>{{offload.time_initially_reported * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
+              <td>{{offload.time_confirmed * 1000 | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
+              <td>{{offload.station.line_code_1}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
